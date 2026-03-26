@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Container } from '@/components';
-import { Card } from '@/components';
-import { Typography } from '@/components';
+import { Card } from '../components/card/Card.tsx';
+import { Container } from '../components/container/Container.tsx';
+import { Typography } from '../components/typography/Typography.tsx';
 
 const meta = {
   title: 'Components/Container',

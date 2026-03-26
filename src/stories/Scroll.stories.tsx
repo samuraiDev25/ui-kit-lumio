@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Scroll } from '@/components';
-import { Card } from '@/components';
-import { Typography } from '@/components';
+import { Card } from '../components/card/Card.tsx';
+import { Scroll } from '../components/scroll/Scroll.tsx';
+import { Typography } from '../components/typography/Typography.tsx';
 
 const items = Array.from({ length: 12 }, (_, index) => `Scrollable item ${index + 1}`);
 

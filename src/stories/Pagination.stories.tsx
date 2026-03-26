@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { fn } from 'storybook/test';
-import { Pagination } from '@/components';
+import { Pagination } from '../components/pagination/Pagination.tsx';
 
 const meta = {
   title: 'Components/Pagination',

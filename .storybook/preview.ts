@@ -1,7 +1,10 @@
-import type { Preview } from '@storybook/react-vite';
+import { definePreview } from '@storybook/react-vite';
+import * as a11y from '@storybook/addon-a11y/preview';
+import * as docs from '@storybook/addon-docs/preview';
 import '../src/styles/index.scss';
 
-const preview: Preview = {
+const preview = definePreview({
+  addons: [a11y, docs],
   parameters: {
     controls: {
       matchers: {
@@ -17,6 +20,6 @@ const preview: Preview = {
       test: 'todo',
     },
   },
-};
+});
 
 export default preview;

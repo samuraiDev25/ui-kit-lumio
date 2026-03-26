@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useArgs } from 'storybook/preview-api';
 import type { DateRange } from 'react-day-picker';
-import { DatePicker } from '@/components';
+import { DatePicker } from '../components/datePicker/DatePicker.tsx';
 
 const meta = {
   title: 'Components/DatePicker',

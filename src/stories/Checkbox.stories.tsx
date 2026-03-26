@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useArgs } from 'storybook/preview-api';
 import { fn } from 'storybook/test';
-import { Checkbox } from '@/components';
+import { Checkbox } from '../components/checkbox/CheckBox.tsx';
 
 const meta = {
   title: 'Components/Checkbox',

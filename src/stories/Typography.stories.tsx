@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Typography } from '@/components';
+import { Typography } from '../components/typography/Typography.tsx';
 
 const meta = {
   title: 'Components/Typography',

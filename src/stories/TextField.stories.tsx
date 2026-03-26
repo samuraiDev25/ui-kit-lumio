@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Eye, Search } from '../components/icons';
-import { TextField } from '../components/textField/TextField';
+import Eye from '../components/icons/Eye.tsx';
+import Search from '../components/icons/Search.tsx';
+import { TextField } from '../components/textField/TextField.tsx';
 
 const meta = {
   title: 'Components/TextField',
