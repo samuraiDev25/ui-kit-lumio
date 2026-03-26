@@ -15,3 +15,4 @@ export { Modal } from './modal/Modal';
 export { Dialog } from './dialog/Dialog';
 export { Label } from './label/Label';
 export { UsersCount } from './users-count/UsersCount';
+export { Loading } from './loading/Loading';

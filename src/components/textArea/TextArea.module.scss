@@ -2,8 +2,6 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
-  //width: 284px; Не надо задавать жесткие ограничения
-  //height: 84px; Не надо задавать жесткие ограничения
   font-family:
     'Inter',
     'Roboto',
@@ -14,139 +12,127 @@
 }
 
 .textAreaLabel {
-  font-family: 'Inter', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 24px;
-  color: #8d9094;
-  margin-bottom: 2px;
   display: flex;
   align-items: center;
+  margin-bottom: 2px;
   cursor: pointer;
-  transition: color 0.2s ease;
   user-select: none;
+  transition: color 0.2s ease;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--color-light-900);
 }
 
 .textAreaLabelDisabled {
-  color: #4c4c4c;
   cursor: not-allowed;
+  color: var(--color-dark-100);
 }
 
 .textAreaWrapper {
   position: relative;
-  box-sizing: border-box;
-  //width: 284px; Не надо задавать жесткие ограничения
-  min-height: 84px;
-  background: #171717;
-  border: 1px solid #4c4c4c;
-  border-radius: 2px;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
+  box-sizing: border-box;
+  min-height: 84px;
+  border: 1px solid var(--color-dark-100);
+  border-radius: 2px;
+  background: var(--color-dark-500);
   opacity: 1;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Default State */
 .textAreaWrapper[data-state='default'] {
-  border-color: #4c4c4c;
+  border-color: var(--color-dark-100);
 }
 
-/* Hover State */
 .textAreaWrapperHover,
 .textAreaWrapper[data-state='hover'] {
-  border-color: #ffffff; // По Figma hover меняет цвет на белый
   cursor: pointer;
+  border-color: var(--color-light-100);
 }
 
-/* Active State (когда есть текст) */
 .textAreaWrapperActive,
 .textAreaWrapper[data-state='active'] {
-  border-color: #ffffff;
+  border-color: var(--color-light-100);
 }
 
 .textAreaWrapperActive .textAreaElement,
 .textAreaWrapper[data-state='active'] .textAreaElement {
-  color: #ffffff;
+  color: var(--color-light-100);
 }
 
-/* Focus State - ФИКС: убран border-width: 1px */
 .textAreaWrapperFocused,
 .textAreaWrapper[data-state='focused'] {
-  border: 1px solid #2f68cc; // Только 1px синяя рамка
-  box-shadow: 0 0 0 1px rgba(47, 104, 204, 0.2);
+  border: 1px solid var(--color-accent-700);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-accent-700) 20%, transparent);
 }
 
 .textAreaWrapperFocused .textAreaElement,
 .textAreaWrapper[data-state='focused'] .textAreaElement {
-  color: #ffffff;
+  color: var(--color-light-100);
 }
 
-/* Error State */
 .textAreaWrapperError,
 .textAreaWrapper[data-state='error'] {
-  border-color: #cc1439;
-  background: #171717;
+  border-color: var(--color-danger-500);
+  background: var(--color-dark-500);
 }
 
 .textAreaWrapperError .textAreaElement,
 .textAreaWrapper[data-state='error'] .textAreaElement {
-  color: #ffffff;
+  color: var(--color-light-100);
 }
 
-/* Disabled State */
 .textAreaWrapperDisabled,
 .textAreaWrapper[data-state='disabled'] {
-  border-color: #4c4c4c;
-  background: #171717;
   cursor: not-allowed;
+  border-color: var(--color-dark-100);
+  background: var(--color-dark-500);
   opacity: 0.6;
 }
 
 .textAreaElement {
+  box-sizing: border-box;
+  min-height: 84px;
   width: 100%;
   height: 84px;
   padding: 8px 12px;
   border: none;
   outline: none;
+  resize: vertical;
+  background: transparent;
+  color: var(--color-light-100);
+  caret-color: var(--color-accent-700);
+  transition: all 0.2s ease;
   font-family: 'Inter', sans-serif;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
   line-height: 24px;
-  color: #ffffff;
-  background: transparent;
-  resize: vertical;
-  min-height: 84px;
-  transition: all 0.2s ease;
-  caret-color: #2f68cc;
-  box-sizing: border-box;
 }
 
 .textAreaElement::placeholder {
-  color: #8d9094;
+  opacity: 1;
+  color: var(--color-light-900);
   font-size: 16px;
   font-weight: 400;
-  opacity: 1;
 }
 
-/* Placeholder для разных состояний */
 .textAreaWrapper[data-state='default'] .textAreaElement::placeholder,
-.textAreaWrapper[data-state='hover'] .textAreaElement::placeholder {
-  color: #8d9094;
-}
-
+.textAreaWrapper[data-state='hover'] .textAreaElement::placeholder,
 .textAreaWrapper[data-state='active'] .textAreaElement::placeholder,
 .textAreaWrapper[data-state='focused'] .textAreaElement::placeholder {
-  color: #8d9094;
+  color: var(--color-light-900);
 }
 
-/* Disabled стили */
 .textAreaWrapperDisabled .textAreaElement,
 .textAreaWrapper[data-state='disabled'] .textAreaElement,
 .textAreaWrapperDisabled .textAreaElement::placeholder,
 .textAreaWrapper[data-state='disabled'] .textAreaElement::placeholder {
-  color: #4c4c4c;
   cursor: not-allowed;
+  color: var(--color-dark-100);
 }
 
 .textAreaElement:disabled {
@@ -155,53 +141,53 @@
 }
 
 .textAreaElement:read-only {
-  background-color: #171717;
   cursor: default;
   user-select: text;
+  background-color: var(--color-dark-500);
 }
 
 .textAreaCounter {
   position: absolute;
-  bottom: 8px;
   right: 12px;
-  font-family: 'Inter', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
-  color: #8d9094;
-  background-color: rgba(23, 23, 23, 0.9);
+  bottom: 8px;
   padding: 2px 6px;
   border-radius: 2px;
   pointer-events: none;
   user-select: none;
+  background-color: color-mix(in srgb, var(--color-dark-500) 90%, transparent);
+  color: var(--color-light-900);
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
 }
 
 .textAreaWrapperError .textAreaCounter,
 .textAreaWrapper[data-state='error'] .textAreaCounter {
-  color: #cc1439;
+  color: var(--color-danger-500);
 }
 
 .textAreaWrapperDisabled .textAreaCounter,
 .textAreaWrapper[data-state='disabled'] .textAreaCounter {
-  color: #4c4c4c;
+  color: var(--color-dark-100);
 }
 
 .textAreaWrapperFocused .textAreaCounter,
 .textAreaWrapper[data-state='focused'] .textAreaCounter {
-  color: #2f68cc;
+  color: var(--color-accent-700);
 }
 
 .textAreaError {
+  min-height: 16px;
+  margin-top: 2px;
+  animation: fadeIn 0.2s ease forwards;
+  color: var(--color-danger-500);
   font-family: 'Inter', sans-serif;
+  font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
   line-height: 24px;
-  color: #cc1439;
-  margin-top: 2px;
-  min-height: 16px;
-  animation: fadeIn 0.2s ease forwards;
 }
 
 @keyframes fadeIn {
@@ -209,22 +195,24 @@
     opacity: 0;
     transform: translateY(-4px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/* Анимация фокуса - упрощена для соответствия Figma */
 @keyframes focusPulse {
   0% {
-    box-shadow: 0 0 0 0 rgba(47, 104, 204, 0.2);
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-accent-700) 20%, transparent);
   }
+
   70% {
-    box-shadow: 0 0 0 4px rgba(47, 104, 204, 0);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent-700) 0%, transparent);
   }
+
   100% {
-    box-shadow: 0 0 0 0 rgba(47, 104, 204, 0);
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-accent-700) 0%, transparent);
   }
 }
 
@@ -233,29 +221,28 @@
   animation: focusPulse 1.5s infinite;
 }
 
-// Storybook-specific styles for grid layout
 .storybookGridContainer {
-  padding: 40px;
-  background-color: #0d0d0d;
-  border-radius: 8px;
   min-width: 1200px;
   max-width: 1400px;
+  padding: 40px;
+  border-radius: 8px;
+  background-color: var(--color-dark-700);
 }
 
 .storybookGridHeader {
-  color: #fffefe;
   margin-bottom: 32px;
+  color: var(--color-light-100);
+  text-align: center;
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
   font-weight: 400;
-  text-align: center;
 }
 
 .storybookGrid {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 30px;
-  position: relative;
 }
 
 .storybookGridDivider {
@@ -263,20 +250,24 @@
   top: 0;
   bottom: 0;
   width: 1px;
-  background-color: #46515e;
+  background-color: var(--color-dark-100);
 
   &:nth-child(1) {
     left: calc(100% / 6);
   }
+
   &:nth-child(2) {
     left: calc(200% / 6);
   }
+
   &:nth-child(3) {
     left: calc(300% / 6);
   }
+
   &:nth-child(4) {
     left: calc(400% / 6);
   }
+
   &:nth-child(5) {
     left: calc(500% / 6);
   }
@@ -287,9 +278,9 @@
 }
 
 .storybookGridColumnTitle {
-  color: #fffefe;
+  margin-bottom: 20px;
+  color: var(--color-light-100);
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
   font-weight: 400;
-  margin-bottom: 20px;
 }

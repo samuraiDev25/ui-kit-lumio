@@ -51,7 +51,7 @@
   }
 
   &[data-state='checked']:disabled {
-    background-color: var(--color-checkbox-disabled);
+    background-color: var(--color-dark-100);
   }
 }
 
@@ -65,7 +65,7 @@
 
   border-radius: 50%;
 
-  background-color: rgb(255 255 255 / 0%);
+  background-color: transparent;
 
   &.tight {
     margin: -6px;
@@ -78,11 +78,11 @@
   &:focus-within,
   &:hover:not(.disabled),
   &:hover:not(.disabled) .root:not([data-state='checked']) {
-    background-color: var(--color-bg-focus);
+    background-color: color-mix(in srgb, var(--color-light-100) 12%, transparent);
   }
 
   &:active:not(.disabled) {
-    background-color: var(--color-bg-primary-active);
+    background-color: color-mix(in srgb, var(--color-accent-500) 24%, transparent);
   }
 }
 

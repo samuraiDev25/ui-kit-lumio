@@ -12,7 +12,7 @@
   border-radius: 100%;
 
   background-color: transparent;
-  box-shadow: 0 2px 10px black;
+  box-shadow: 0 2px 10px color-mix(in srgb, var(--color-dark-900) 100%, transparent);
 }
 
 .RadioGroupItem:hover {
@@ -56,19 +56,19 @@
   padding-left: 15px;
   font-size: 15px;
   line-height: 1;
-  color: white;
+  color: var(--color-light-100);
 }
 
 .RadioGroupItem[data-disabled] {
   cursor: not-allowed;
-  border-color: #8d9094;
+  border-color: var(--color-light-900);
   opacity: 0.6;
   background-color: transparent;
   box-shadow: none;
 }
 
 .RadioGroupItem[data-disabled] .RadioGroupIndicator::after {
-  background-color: #8d9094;
+  background-color: var(--color-light-900);
 }
 
 .RadioGroupItem[data-disabled]:hover,
@@ -80,10 +80,10 @@
 
 .Label[data-disabled] {
   cursor: not-allowed;
-  color: #8d9094;
+  color: var(--color-light-900);
   opacity: 0.7;
 }
 
 .Label[data-disabled] span {
-  color: #8d9094;
+  color: var(--color-light-900);
 }

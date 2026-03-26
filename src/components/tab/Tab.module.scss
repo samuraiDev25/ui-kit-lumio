@@ -29,8 +29,8 @@
   }
 
   &:active:not([data-state='active']) {
-    background-color: #73a4ff57;
-    color: #9e9e9e;
+    background-color: color-mix(in srgb, var(--color-accent-100) 34%, transparent);
+    color: var(--color-light-900);
   }
 
   &[data-state='active'] {
@@ -39,7 +39,7 @@
   }
 
   &:active {
-    background-color: #3378ee50;
+    background-color: color-mix(in srgb, var(--color-accent-500) 31%, transparent);
   }
 
   &:focus:not([data-state='inactive']) {
@@ -49,7 +49,7 @@
 
   // Hover state column styling
   &:hover {
-    background-color: #2759af49;
+    background-color: color-mix(in srgb, var(--color-accent-900) 29%, transparent);
   }
 
   // Focus state column styling
