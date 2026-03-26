@@ -19,3 +19,13 @@ Use Conventional Commits for all commit messages, for example `feat: add date pi
 ## Contributor Notes
 
 Do not edit `dist/` outputs manually. Prefer extending existing component patterns instead of introducing new folder conventions. If you add a public component, export it from `src/components/index.ts` in the same change.
+
+## Storybook MCP Workflow
+
+When working on UI components or stories, use the Storybook MCP tools from this project before changing props, stories, or documented usage.
+
+- Never assume component props or supported states. Check Storybook MCP documentation first.
+- Use `list-all-documentation` to discover documented components.
+- Use `get-documentation` or `get-documentation-for-story` to confirm props, examples, and existing stories before editing.
+- Use `get-storybook-story-instructions` when creating or updating stories so new stories follow current Storybook guidance.
+- Use `run-story-tests` after story changes when Storybook test coverage is relevant.

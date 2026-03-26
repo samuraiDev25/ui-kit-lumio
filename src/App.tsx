@@ -1,4 +1,3 @@
-import './App.css';
 import { Button, Card } from '@/components';
 
 function App() {
