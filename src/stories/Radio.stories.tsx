@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useArgs } from 'storybook/preview-api';
-import { Radio } from '../components/radio/Radio';
+import { Radio } from '@/components';
 
 const options = [
   { value: 'starter', label: 'Starter' },

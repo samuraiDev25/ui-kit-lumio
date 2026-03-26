@@ -7,8 +7,20 @@ const config: StorybookConfig = {
     '@storybook/addon-a11y',
     '@storybook/addon-docs',
     '@storybook/addon-onboarding',
-    '@storybook/addon-mcp',
+    {
+      name: '@storybook/addon-mcp',
+      options: {
+        toolsets: {
+          dev: true, // Tools for story URL retrieval and UI building instructions (default: true)
+          docs: true, // Tools for component manifest and documentation (default: true, requires experimental feature flag below 👇)
+          test: false,
+        },
+      },
+    },
   ],
+  features: {
+    componentsManifest: true,
+  },
   framework: '@storybook/react-vite',
 };
 export default config;

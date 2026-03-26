@@ -18,8 +18,27 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {};
+export const Primary: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'Primary action for less prominent operations',
+      },
+    },
+  },
+  args: {
+    variant: 'primary',
+    children: 'Button',
+  },
+};
 export const Secondary: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'Secondary action for less prominent operations',
+      },
+    },
+  },
   args: {
     variant: 'secondary',
     children: 'Button',

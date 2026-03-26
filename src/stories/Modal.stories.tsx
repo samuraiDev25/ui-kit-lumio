@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { fn } from 'storybook/test';
-import { Modal } from '../components/modal/Modal';
-import { Typography } from '../components/typography/Typography';
+import { Modal } from '@/components';
+import { Typography } from '@/components';
 
 const meta = {
   title: 'Components/Modal',

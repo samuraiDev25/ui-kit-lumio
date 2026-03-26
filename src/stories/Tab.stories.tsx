@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Card } from '../components/card/Card';
-import { Tab } from '../components/tab/Tab';
-import { Typography } from '../components/typography/Typography';
+import { Card } from '@/components';
+import { Tab } from '@/components';
+import { Typography } from '@/components';
 
 const items = [
   {
