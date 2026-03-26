@@ -78,7 +78,8 @@
   inset-inline-end: 36px;
   position: absolute;
 }
-.rdp-button_next, .rdp-button_previous {
+.rdp-button_next,
+.rdp-button_previous {
   background-color: var(--color-dark-100);
   border-radius: 50%;
 }
@@ -115,7 +116,9 @@
   background-color: var(--color-accent-500);
 }
 // убираю белый фон
-.rdp-range_start, .rdp-range_end, .rdp-range_middle {
+.rdp-range_start,
+.rdp-range_end,
+.rdp-range_middle {
   background: var(--color-accent-900);
   border-radius: 50%;
   position: relative;
@@ -139,7 +142,6 @@
     z-index: -1;
   }
 }
-
 
 //начало диапазона
 .rdp-range_start .rdp-day_button {

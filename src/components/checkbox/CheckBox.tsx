@@ -35,11 +35,7 @@ export const Checkbox: FC<CheckboxProps> = ({
   const showError = !disabled && !!errorMessage && errorMessage.length > 0;
 
   const classNames = {
-    buttonWrapper: clsx(
-      s.buttonWrapper,
-      disabled && s.disabled,
-      tight && s.tight,
-    ),
+    buttonWrapper: clsx(s.buttonWrapper, disabled && s.disabled, tight && s.tight),
     box: clsx(className),
     container: s.container,
     indicator: s.indicator,
@@ -63,11 +59,7 @@ export const Checkbox: FC<CheckboxProps> = ({
             >
               <AnimatePresence initial={false}>
                 {checked && (
-                  <CheckboxRadix.Indicator
-                    asChild
-                    className={classNames.indicator}
-                    forceMount
-                  >
+                  <CheckboxRadix.Indicator asChild className={classNames.indicator} forceMount>
                     <motion.div
                       animate={'checked'}
                       exit={'unchecked'}
@@ -100,9 +92,7 @@ export const Checkbox: FC<CheckboxProps> = ({
           </div>
           {label}
         </LabelRadix.Root>
-        {showError && (
-          <span className={classNames.errorText}>{errorMessage}</span>
-        )}
+        {showError && <span className={classNames.errorText}>{errorMessage}</span>}
       </div>
     </div>
   );

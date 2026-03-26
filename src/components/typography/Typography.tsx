@@ -33,15 +33,8 @@ export function Typography<K extends ElementType = 'p'>({
   isLink,
   variant = 'regular_text_16',
   ...restProps
-}: Omit<ComponentPropsWithoutRef<K>, keyof TypographyProps<K>> &
-  TypographyProps<K>) {
-  const classNames = clsx(
-    s.typography,
-    s[variant],
-    s[color],
-    isLink && s.link,
-    className,
-  );
+}: Omit<ComponentPropsWithoutRef<K>, keyof TypographyProps<K>> & TypographyProps<K>) {
+  const classNames = clsx(s.typography, s[variant], s[color], isLink && s.link, className);
   const Component = as || 'p';
 
   return <Component className={classNames} {...restProps} />;

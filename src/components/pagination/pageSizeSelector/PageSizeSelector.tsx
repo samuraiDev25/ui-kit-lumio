@@ -11,11 +11,7 @@ type Props = {
   handlePageSizeChangeAction: (size: number) => void;
 };
 
-export const PageSizeSelector = ({
-  pageSize,
-  pageSizeOptions,
-  handlePageSizeChangeAction,
-}: Props) => {
+export const PageSizeSelector = ({ pageSize, pageSizeOptions, handlePageSizeChangeAction }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -28,9 +24,7 @@ export const PageSizeSelector = ({
       >
         <Select.Trigger className={s.trigger}>
           <Select.Value className={s.value} />
-          <Select.Icon>
-            {isOpen ? <ArrowIosUp /> : <ArrowIosDownOutline />}
-          </Select.Icon>
+          <Select.Icon>{isOpen ? <ArrowIosUp /> : <ArrowIosDownOutline />}</Select.Icon>
         </Select.Trigger>
 
         <Select.Content className={s.content} position="popper" sideOffset={0}>

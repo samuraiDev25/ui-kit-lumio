@@ -97,16 +97,9 @@ export const TextArea: React.FC<TextAreaProps> = ({
   };
 
   return (
-    <div
-      className={`${styles.textAreaContainer} ${containerClassName ?? ''} ${className}`}
-      id={id}
-    >
+    <div className={`${styles.textAreaContainer} ${containerClassName ?? ''} ${className}`} id={id}>
       {label && (
-        <label
-          className={`${styles.textAreaLabel} ${disabled ? styles.textAreaLabelDisabled : ''}`}
-        >
-          {label}
-        </label>
+        <label className={`${styles.textAreaLabel} ${disabled ? styles.textAreaLabelDisabled : ''}`}>{label}</label>
       )}
 
       <div

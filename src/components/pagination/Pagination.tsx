@@ -88,17 +88,11 @@ export const Pagination = ({
   };
   return (
     <div className={s.pagination}>
-      <button
-        disabled={currentPage === 1}
-        onClick={() => handlePageChange(currentPage - 1)}
-      >
+      <button disabled={currentPage === 1} onClick={() => handlePageChange(currentPage - 1)}>
         <ArrowIosBack />
       </button>
       {renderPageNumbers()}
-      <button
-        disabled={currentPage === totalPages}
-        onClick={() => handlePageChange(currentPage + 1)}
-      >
+      <button disabled={currentPage === totalPages} onClick={() => handlePageChange(currentPage + 1)}>
         <ArrowIosForward />
       </button>
       <PageSizeSelector

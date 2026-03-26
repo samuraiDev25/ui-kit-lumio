@@ -23,8 +23,7 @@ import { DateRange } from 'react-day-picker';
 //   return { from: start, to: end };
 // };
 
-export const formatDate = (date?: Date) =>
-  date ? date.toLocaleDateString('en-GB') : 'DD/MM/YYYY';
+export const formatDate = (date?: Date) => (date ? date.toLocaleDateString('en-GB') : 'DD/MM/YYYY');
 
 export const formatRange = (range?: DateRange) => {
   if (!range?.from) return 'DD/MM/YYYY - DD/MM/YYYY';

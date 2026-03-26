@@ -4,7 +4,13 @@
   gap: 4px;
   //width: 284px; Не надо задавать жесткие ограничения
   //height: 84px; Не надо задавать жесткие ограничения
-  font-family: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family:
+    'Inter',
+    'Roboto',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
 }
 
 .textAreaLabel {
@@ -13,7 +19,7 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
-  color: #8D9094;
+  color: #8d9094;
   margin-bottom: 2px;
   display: flex;
   align-items: center;
@@ -23,7 +29,7 @@
 }
 
 .textAreaLabelDisabled {
-  color: #4C4C4C;
+  color: #4c4c4c;
   cursor: not-allowed;
 }
 
@@ -33,7 +39,7 @@
   //width: 284px; Не надо задавать жесткие ограничения
   min-height: 84px;
   background: #171717;
-  border: 1px solid #4C4C4C;
+  border: 1px solid #4c4c4c;
   border-radius: 2px;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
@@ -41,56 +47,56 @@
 }
 
 /* Default State */
-.textAreaWrapper[data-state="default"] {
-  border-color: #4C4C4C;
+.textAreaWrapper[data-state='default'] {
+  border-color: #4c4c4c;
 }
 
 /* Hover State */
 .textAreaWrapperHover,
-.textAreaWrapper[data-state="hover"] {
-  border-color: #FFFFFF; // По Figma hover меняет цвет на белый
+.textAreaWrapper[data-state='hover'] {
+  border-color: #ffffff; // По Figma hover меняет цвет на белый
   cursor: pointer;
 }
 
 /* Active State (когда есть текст) */
 .textAreaWrapperActive,
-.textAreaWrapper[data-state="active"] {
-  border-color: #FFFFFF;
+.textAreaWrapper[data-state='active'] {
+  border-color: #ffffff;
 }
 
 .textAreaWrapperActive .textAreaElement,
-.textAreaWrapper[data-state="active"] .textAreaElement {
-  color: #FFFFFF;
+.textAreaWrapper[data-state='active'] .textAreaElement {
+  color: #ffffff;
 }
 
 /* Focus State - ФИКС: убран border-width: 1px */
 .textAreaWrapperFocused,
-.textAreaWrapper[data-state="focused"] {
-  border: 1px solid #2F68CC; // Только 1px синяя рамка
+.textAreaWrapper[data-state='focused'] {
+  border: 1px solid #2f68cc; // Только 1px синяя рамка
   box-shadow: 0 0 0 1px rgba(47, 104, 204, 0.2);
 }
 
 .textAreaWrapperFocused .textAreaElement,
-.textAreaWrapper[data-state="focused"] .textAreaElement {
-  color: #FFFFFF;
+.textAreaWrapper[data-state='focused'] .textAreaElement {
+  color: #ffffff;
 }
 
 /* Error State */
 .textAreaWrapperError,
-.textAreaWrapper[data-state="error"] {
-  border-color: #CC1439;
+.textAreaWrapper[data-state='error'] {
+  border-color: #cc1439;
   background: #171717;
 }
 
 .textAreaWrapperError .textAreaElement,
-.textAreaWrapper[data-state="error"] .textAreaElement {
-  color: #FFFFFF;
+.textAreaWrapper[data-state='error'] .textAreaElement {
+  color: #ffffff;
 }
 
 /* Disabled State */
 .textAreaWrapperDisabled,
-.textAreaWrapper[data-state="disabled"] {
-  border-color: #4C4C4C;
+.textAreaWrapper[data-state='disabled'] {
+  border-color: #4c4c4c;
   background: #171717;
   cursor: not-allowed;
   opacity: 0.6;
@@ -107,39 +113,39 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #FFFFFF;
+  color: #ffffff;
   background: transparent;
   resize: vertical;
   min-height: 84px;
   transition: all 0.2s ease;
-  caret-color: #2F68CC;
+  caret-color: #2f68cc;
   box-sizing: border-box;
 }
 
 .textAreaElement::placeholder {
-  color: #8D9094;
+  color: #8d9094;
   font-size: 16px;
   font-weight: 400;
   opacity: 1;
 }
 
 /* Placeholder для разных состояний */
-.textAreaWrapper[data-state="default"] .textAreaElement::placeholder,
-.textAreaWrapper[data-state="hover"] .textAreaElement::placeholder {
-  color: #8D9094;
+.textAreaWrapper[data-state='default'] .textAreaElement::placeholder,
+.textAreaWrapper[data-state='hover'] .textAreaElement::placeholder {
+  color: #8d9094;
 }
 
-.textAreaWrapper[data-state="active"] .textAreaElement::placeholder,
-.textAreaWrapper[data-state="focused"] .textAreaElement::placeholder {
-  color: #8D9094;
+.textAreaWrapper[data-state='active'] .textAreaElement::placeholder,
+.textAreaWrapper[data-state='focused'] .textAreaElement::placeholder {
+  color: #8d9094;
 }
 
 /* Disabled стили */
 .textAreaWrapperDisabled .textAreaElement,
-.textAreaWrapper[data-state="disabled"] .textAreaElement,
+.textAreaWrapper[data-state='disabled'] .textAreaElement,
 .textAreaWrapperDisabled .textAreaElement::placeholder,
-.textAreaWrapper[data-state="disabled"] .textAreaElement::placeholder {
-  color: #4C4C4C;
+.textAreaWrapper[data-state='disabled'] .textAreaElement::placeholder {
+  color: #4c4c4c;
   cursor: not-allowed;
 }
 
@@ -163,7 +169,7 @@
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
-  color: #8D9094;
+  color: #8d9094;
   background-color: rgba(23, 23, 23, 0.9);
   padding: 2px 6px;
   border-radius: 2px;
@@ -172,18 +178,18 @@
 }
 
 .textAreaWrapperError .textAreaCounter,
-.textAreaWrapper[data-state="error"] .textAreaCounter {
-  color: #CC1439;
+.textAreaWrapper[data-state='error'] .textAreaCounter {
+  color: #cc1439;
 }
 
 .textAreaWrapperDisabled .textAreaCounter,
-.textAreaWrapper[data-state="disabled"] .textAreaCounter {
-  color: #4C4C4C;
+.textAreaWrapper[data-state='disabled'] .textAreaCounter {
+  color: #4c4c4c;
 }
 
 .textAreaWrapperFocused .textAreaCounter,
-.textAreaWrapper[data-state="focused"] .textAreaCounter {
-  color: #2F68CC;
+.textAreaWrapper[data-state='focused'] .textAreaCounter {
+  color: #2f68cc;
 }
 
 .textAreaError {
@@ -192,7 +198,7 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
-  color: #CC1439;
+  color: #cc1439;
   margin-top: 2px;
   min-height: 16px;
   animation: fadeIn 0.2s ease forwards;
@@ -223,21 +229,21 @@
 }
 
 .textAreaWrapperFocused,
-.textAreaWrapper[data-state="focused"] {
+.textAreaWrapper[data-state='focused'] {
   animation: focusPulse 1.5s infinite;
 }
 
 // Storybook-specific styles for grid layout
 .storybookGridContainer {
   padding: 40px;
-  background-color: #0D0D0D;
+  background-color: #0d0d0d;
   border-radius: 8px;
   min-width: 1200px;
   max-width: 1400px;
 }
 
 .storybookGridHeader {
-  color: #FFFEFE;
+  color: #fffefe;
   margin-bottom: 32px;
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
@@ -257,13 +263,23 @@
   top: 0;
   bottom: 0;
   width: 1px;
-  background-color: #46515E;
+  background-color: #46515e;
 
-  &:nth-child(1) { left: calc(100% / 6); }
-  &:nth-child(2) { left: calc(200% / 6); }
-  &:nth-child(3) { left: calc(300% / 6); }
-  &:nth-child(4) { left: calc(400% / 6); }
-  &:nth-child(5) { left: calc(500% / 6); }
+  &:nth-child(1) {
+    left: calc(100% / 6);
+  }
+  &:nth-child(2) {
+    left: calc(200% / 6);
+  }
+  &:nth-child(3) {
+    left: calc(300% / 6);
+  }
+  &:nth-child(4) {
+    left: calc(400% / 6);
+  }
+  &:nth-child(5) {
+    left: calc(500% / 6);
+  }
 }
 
 .storybookGridColumn {
@@ -271,7 +287,7 @@
 }
 
 .storybookGridColumnTitle {
-  color: #FFFEFE;
+  color: #fffefe;
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
   font-weight: 400;

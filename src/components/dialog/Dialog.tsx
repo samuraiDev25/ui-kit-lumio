@@ -49,29 +49,17 @@ export const Dialog: FC<DialogProps> = ({
   };
 
   const classnames = {
-    buttonsBox: clsx(
-      s.buttonsBox,
-      showCancelButton && s.hasCancelButton,
-      buttonsClass,
-    ),
+    buttonsBox: clsx(s.buttonsBox, showCancelButton && s.hasCancelButton, buttonsClass),
     button: clsx(s.button, confirmButtonClass),
   };
 
-  const confirmButtonVariant: ButtonVariant = getConfirmButtonVariant(
-    invertButtons,
-    showCancelButton,
-  );
-  const cancelButtonVariant: ButtonVariant = invertButtons
-    ? 'primary'
-    : 'outline';
+  const confirmButtonVariant: ButtonVariant = getConfirmButtonVariant(invertButtons, showCancelButton);
+  const cancelButtonVariant: ButtonVariant = invertButtons ? 'primary' : 'outline';
 
   return (
     <Modal onClose={handleCancelButtonClick} {...rest}>
       {children}
-      <div
-        style={{ marginTop: buttonsMarginTop }}
-        className={classnames.buttonsBox}
-      >
+      <div style={{ marginTop: buttonsMarginTop }} className={classnames.buttonsBox}>
         {footerContent}
         {
           <Button
@@ -84,11 +72,7 @@ export const Dialog: FC<DialogProps> = ({
           </Button>
         }
         {showCancelButton && (
-          <Button
-            onClick={handleCancelButtonClick}
-            variant={cancelButtonVariant}
-            className={classnames.button}
-          >
+          <Button onClick={handleCancelButtonClick} variant={cancelButtonVariant} className={classnames.button}>
             {cancelButtonText}
           </Button>
         )}
@@ -97,10 +81,7 @@ export const Dialog: FC<DialogProps> = ({
   );
 };
 
-const getConfirmButtonVariant = (
-  invertButtons: boolean,
-  showCancelButton: boolean,
-): ButtonVariant => {
+const getConfirmButtonVariant = (invertButtons: boolean, showCancelButton: boolean): ButtonVariant => {
   if (showCancelButton) {
     if (invertButtons) {
       return 'outline';

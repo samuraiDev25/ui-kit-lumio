@@ -30,10 +30,8 @@ export const Scroll: FC<ScrollbarProps> = ({
     viewport: s.viewport,
   };
 
-  const maxHeightConverted =
-    typeof maxHeight === 'number' ? `${maxHeight}px` : maxHeight;
-  const maxWidthConverted =
-    typeof maxWidth === 'number' ? `${maxWidth}px` : maxWidth;
+  const maxHeightConverted = typeof maxHeight === 'number' ? `${maxHeight}px` : maxHeight;
+  const maxWidthConverted = typeof maxWidth === 'number' ? `${maxWidth}px` : maxWidth;
 
   const viewportStyles = {
     maxHeight: maxHeightConverted,
@@ -43,22 +41,13 @@ export const Scroll: FC<ScrollbarProps> = ({
   return (
     <ScrollArea.Root asChild type={type}>
       <div className={classNames.root} {...rest}>
-        <ScrollArea.Viewport
-          className={classNames.viewport}
-          style={viewportStyles}
-        >
+        <ScrollArea.Viewport className={classNames.viewport} style={viewportStyles}>
           {children}
         </ScrollArea.Viewport>
-        <ScrollArea.Scrollbar
-          className={classNames.scrollbar}
-          orientation={'vertical'}
-        >
+        <ScrollArea.Scrollbar className={classNames.scrollbar} orientation={'vertical'}>
           <ScrollArea.Thumb className={classNames.thumb} />
         </ScrollArea.Scrollbar>
-        <ScrollArea.Scrollbar
-          className={classNames.scrollbar}
-          orientation={'horizontal'}
-        >
+        <ScrollArea.Scrollbar className={classNames.scrollbar} orientation={'horizontal'}>
           <ScrollArea.Thumb className={classNames.thumb} />
         </ScrollArea.Scrollbar>
       </div>

@@ -18,26 +18,12 @@ export type ButtonProps = {
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
-    {
-      className = '',
-      variant = 'primary',
-      size = 'md',
-      fullWidth = false,
-      asChild = false,
-      children,
-      ...props
-    },
+    { className = '', variant = 'primary', size = 'md', fullWidth = false, asChild = false, children, ...props },
     ref,
   ) => {
     const Comp = asChild ? Slot : 'button';
 
-    const buttonClasses = clsx(
-      s.button,
-      s[variant],
-      s[size],
-      fullWidth && s.fullWidth,
-      className,
-    );
+    const buttonClasses = clsx(s.button, s[variant], s[size], fullWidth && s.fullWidth, className);
 
     return (
       <Comp ref={ref} className={buttonClasses} {...props}>

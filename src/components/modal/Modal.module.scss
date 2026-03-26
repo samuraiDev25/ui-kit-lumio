@@ -52,11 +52,7 @@
 }
 
 .Title {
-  @include t.typography(
-    var(--font-size-xl),
-    var(--font-weight-700),
-    var(--line-height-l)
-  );
+  @include t.typography(var(--font-size-xl), var(--font-weight-700), var(--line-height-l));
 
   margin: 0;
 }

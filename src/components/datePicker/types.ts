@@ -1,5 +1,1 @@
-export type CaptionLayout =
-  | 'label'
-  | 'dropdown'
-  | 'dropdown-months'
-  | 'dropdown-years';
+export type CaptionLayout = 'label' | 'dropdown' | 'dropdown-months' | 'dropdown-years';

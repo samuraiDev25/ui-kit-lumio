@@ -1,5 +1,4 @@
 import * as RadioGroup from '@radix-ui/react-radio-group';
-import React from 'react';
 import s from './Radio.module.scss';
 
 export type RadioOption = {
@@ -40,16 +39,8 @@ export const Radio = ({
         const isDisabled = disabled || opt.disabled;
 
         return (
-          <label
-            key={opt.value}
-            className={s.Label}
-            data-disabled={isDisabled ? '' : undefined}
-          >
-            <RadioGroup.Item
-              value={opt.value}
-              disabled={isDisabled}
-              className={s.RadioGroupItem}
-            >
+          <label key={opt.value} className={s.Label} data-disabled={isDisabled ? '' : undefined}>
+            <RadioGroup.Item value={opt.value} disabled={isDisabled} className={s.RadioGroupItem}>
               <RadioGroup.Indicator className={s.RadioGroupIndicator} />
             </RadioGroup.Item>
 

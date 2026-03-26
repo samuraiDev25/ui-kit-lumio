@@ -65,8 +65,6 @@ const SvgPaypalSvgrepoCom4 = (
     </defs>
   </svg>
 );
-const ForwardRef = forwardRef<SVGSVGElement, PaypalSvgrepoCom4Props>(
-  SvgPaypalSvgrepoCom4,
-);
+const ForwardRef = forwardRef<SVGSVGElement, PaypalSvgrepoCom4Props>(SvgPaypalSvgrepoCom4);
 const Memo = memo(ForwardRef);
 export default Memo;

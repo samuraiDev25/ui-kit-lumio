@@ -62,18 +62,9 @@ export const TextField: FC<TextFieldProps> = ({
 
   return (
     <div className={classNames.root}>
-      {label && (
-        <Label
-          className={classNames.label}
-          htmlFor={textFieldId}
-          label={label}
-          required={required}
-        />
-      )}
+      {label && <Label className={classNames.label} htmlFor={textFieldId} label={label} required={required} />}
       <div className={classNames.inputContainer}>
-        {!!iconStart && (
-          <span className={classNames.iconStart}>{iconStart}</span>
-        )}
+        {!!iconStart && <span className={classNames.iconStart}>{iconStart}</span>}
         <input
           className={classNames.input}
           data-icon={dataIcon}
@@ -91,9 +82,7 @@ export const TextField: FC<TextFieldProps> = ({
           </span>
         )}
       </div>
-      {showError && (
-        <span className={classNames.errorText}>{errorMessage}</span>
-      )}
+      {showError && <span className={classNames.errorText}>{errorMessage}</span>}
     </div>
   );
 };

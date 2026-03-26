@@ -1,10 +1,5 @@
 'use client';
-import {
-  ClassNames,
-  DateRange,
-  DayPicker,
-  ModifiersClassNames,
-} from 'react-day-picker';
+import { ClassNames, DateRange, DayPicker, ModifiersClassNames } from 'react-day-picker';
 import s from '../DatePicker.module.scss';
 import './DatePicker.global.scss';
 import { CaptionLayout } from '../types';

@@ -41,8 +41,6 @@ const SvgStripeSvgrepoCom4 = (
     </defs>
   </svg>
 );
-const ForwardRef = forwardRef<SVGSVGElement, StripeSvgrepoCom4Props>(
-  SvgStripeSvgrepoCom4,
-);
+const ForwardRef = forwardRef<SVGSVGElement, StripeSvgrepoCom4Props>(SvgStripeSvgrepoCom4);
 const Memo = memo(ForwardRef);
 export default Memo;

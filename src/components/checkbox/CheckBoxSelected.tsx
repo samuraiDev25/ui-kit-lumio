@@ -1,15 +1,15 @@
-import { CSSProperties, FC, HTMLProps, ReactNode, SVGProps } from 'react'
+import { CSSProperties, FC, HTMLProps, ReactNode, SVGProps } from 'react';
 
 export type IconProps = {
-  autoSize?: boolean
-  backgroundColor?: string
-  color?: string
-  size?: number
-  svgProps?: SVGProps<SVGSVGElement>
-} & Omit<HTMLProps<HTMLSpanElement>, 'color' | 'size'>
+  autoSize?: boolean;
+  backgroundColor?: string;
+  color?: string;
+  size?: number;
+  svgProps?: SVGProps<SVGSVGElement>;
+} & Omit<HTMLProps<HTMLSpanElement>, 'color' | 'size'>;
 
 const CheckBoxSelected = (allProps: IconProps) => {
-  const { svgProps: props, ...restProps } = allProps
+  const { svgProps: props, ...restProps } = allProps;
 
   return (
     <IconWrapper
@@ -33,10 +33,10 @@ const CheckBoxSelected = (allProps: IconProps) => {
       }
       {...restProps}
     />
-  )
-}
+  );
+};
 
-export default CheckBoxSelected
+export default CheckBoxSelected;
 
 export const IconWrapper: FC<{ icon: ReactNode } & IconProps> = ({
   backgroundColor = 'var(--color-neutral-light-50)',
@@ -45,8 +45,8 @@ export const IconWrapper: FC<{ icon: ReactNode } & IconProps> = ({
   size: sizeProp,
   ...restProps
 }) => {
-  const color = colorProp ? colorProp : 'currentColor'
-  const size = sizeProp ? `${sizeProp}px` : '24px'
+  const color = colorProp ? colorProp : 'currentColor';
+  const size = sizeProp ? `${sizeProp}px` : '24px';
 
   return (
     <span
@@ -66,5 +66,5 @@ export const IconWrapper: FC<{ icon: ReactNode } & IconProps> = ({
     >
       {icon}
     </span>
-  )
-}
+  );
+};

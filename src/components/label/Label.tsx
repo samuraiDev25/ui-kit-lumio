@@ -9,13 +9,7 @@ export type LabelProps = {
   required?: boolean;
 } & ComponentPropsWithoutRef<'label'>;
 
-export const Label: FC<LabelProps> = ({
-  children,
-  className,
-  label,
-  required,
-  ...rest
-}) => {
+export const Label: FC<LabelProps> = ({ children, className, label, required, ...rest }) => {
   const classNames = {
     label: clsx(s.label, className),
     required: s.required,

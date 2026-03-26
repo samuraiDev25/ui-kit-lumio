@@ -87,24 +87,11 @@ export const DatePicker = ({
   };
 
   const wrapperClassName = [s.wrapper, className].filter(Boolean).join(' ');
-  const resolvedLabelClassName = [s.label, labelClassName]
-    .filter(Boolean)
-    .join(' ');
-  const resolvedInputClassName = [
-    s.input,
-    hasError ? s.errorInput : '',
-    inputClassName,
-  ]
-    .filter(Boolean)
-    .join(' ');
-  const resolvedPopoverClassName = [s.popover, popoverClassName]
-    .filter(Boolean)
-    .join(' ');
-  const resolvedErrorClassName = [s.errorText, errorClassName]
-    .filter(Boolean)
-    .join(' ');
-  const resolvedLabelTitle =
-    labelTitle ?? (mode === 'multiple' ? 'Date' : 'Date range');
+  const resolvedLabelClassName = [s.label, labelClassName].filter(Boolean).join(' ');
+  const resolvedInputClassName = [s.input, hasError ? s.errorInput : '', inputClassName].filter(Boolean).join(' ');
+  const resolvedPopoverClassName = [s.popover, popoverClassName].filter(Boolean).join(' ');
+  const resolvedErrorClassName = [s.errorText, errorClassName].filter(Boolean).join(' ');
+  const resolvedLabelTitle = labelTitle ?? (mode === 'multiple' ? 'Date' : 'Date range');
 
   return (
     <div className={wrapperClassName}>
@@ -112,20 +99,12 @@ export const DatePicker = ({
       <Popover.Root open={open} onOpenChange={setOpen}>
         <Popover.Trigger asChild>
           <button className={resolvedInputClassName} disabled={disabled}>
-            {mode === 'multiple'
-              ? formatDate(effectiveSelectedDay)
-              : formatRange(effectiveSelectedRange)}
-            <span className={s.icon}>
-              {open ? <Calendar /> : <CalendarOutline />}
-            </span>
+            {mode === 'multiple' ? formatDate(effectiveSelectedDay) : formatRange(effectiveSelectedRange)}
+            <span className={s.icon}>{open ? <Calendar /> : <CalendarOutline />}</span>
           </button>
         </Popover.Trigger>
         <Popover.Portal>
-          <Popover.Content
-            className={resolvedPopoverClassName}
-            sideOffset={0}
-            align="start"
-          >
+          <Popover.Content className={resolvedPopoverClassName} sideOffset={0} align="start">
             {open &&
               (mode === 'multiple' ? (
                 <DatePickerMultipleMode
@@ -160,11 +139,7 @@ export const DatePicker = ({
         </Popover.Portal>
       </Popover.Root>
 
-      {hasError && (
-        <div className={resolvedErrorClassName}>
-          {errorNode ?? displayError}
-        </div>
-      )}
+      {hasError && <div className={resolvedErrorClassName}>{errorNode ?? displayError}</div>}
     </div>
   );
 };

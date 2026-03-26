@@ -34,7 +34,7 @@
 
   &:hover {
     .scrollThumb {
-      background: #8D9094; // Light/900 - hover цвет из Figma
+      background: #8d9094; // Light/900 - hover цвет из Figma
     }
   }
 }
@@ -61,19 +61,19 @@
 
   // Hover состояние
   &:hover {
-    background: #8D9094; // Light/900
+    background: #8d9094; // Light/900
   }
 }
 
 // Уголок
 .scrollCorner {
-  background: #4C4C4C; // Dark/100 - цвет разделительной линии
+  background: #4c4c4c; // Dark/100 - цвет разделительной линии
 }
 
 // Разделительная линия (если нужно по дизайну)
 .scrollDivider {
   position: absolute;
-  background: #4C4C4C; // Dark/100
+  background: #4c4c4c; // Dark/100
   width: 1px;
   height: 100%;
 }

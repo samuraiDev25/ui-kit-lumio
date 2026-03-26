@@ -1,9 +1,6 @@
 import type { SVGProps } from 'react';
 import { Ref, forwardRef, memo } from 'react';
-const SvgFlagRussia = (
-  props: SVGProps<SVGSVGElement>,
-  ref: Ref<SVGSVGElement>,
-) => (
+const SvgFlagRussia = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -15,12 +12,7 @@ const SvgFlagRussia = (
   >
     <path fill="url(#Flag-Russia_svg__a)" d="M0 0h24v24H0z" />
     <defs>
-      <pattern
-        id="Flag-Russia_svg__a"
-        width={1}
-        height={1}
-        patternContentUnits="objectBoundingBox"
-      >
+      <pattern id="Flag-Russia_svg__a" width={1} height={1} patternContentUnits="objectBoundingBox">
         <use xlinkHref="#Flag-Russia_svg__b" transform="scale(.01389)" />
       </pattern>
       <image
