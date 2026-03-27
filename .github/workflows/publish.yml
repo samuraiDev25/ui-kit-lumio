@@ -1,17 +1,16 @@
 name: Publish Package
 
 on:
-  workflow_dispatch:
-  push:
-    tags:
-      - 'v*'
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+  id-token: write
 
 jobs:
   publish:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      id-token: write
 
     steps:
       - name: Checkout
@@ -31,10 +30,9 @@ jobs:
         run: npx prettier . --check
 
       - name: Validate release tag against package version
-        if: github.event_name == 'push'
         shell: bash
         run: |
-          TAG_NAME="${GITHUB_REF_NAME}"
+          TAG_NAME="${{ github.event.release.tag_name }}"
           if [[ ! "$TAG_NAME" =~ ^v[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$ ]]; then
             echo "Release tag must match vX.Y.Z or prerelease format vX.Y.Z-suffix. Got: $TAG_NAME"
             exit 1
@@ -55,7 +53,6 @@ jobs:
         run: npm run build
 
       - name: Publish to npm
-        if: github.event_name == 'push'
         run: npm publish --access public --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.token_npm }}
