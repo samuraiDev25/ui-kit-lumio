@@ -1,6 +1,6 @@
 {
   "name": "@jstrommash/ui-kit-lumio",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Reusable React UI kit built with TypeScript, Radix UI, and SCSS modules.",
   "license": "MIT",
   "homepage": "https://github.com/samuraiDev25/ui-kit-lumio#readme",
