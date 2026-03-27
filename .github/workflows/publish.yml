@@ -14,7 +14,7 @@ jobs:
       id-token: write
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -30,6 +30,24 @@ jobs:
       - name: Verify formatting
         run: npx prettier . --check
 
+      - name: Validate release tag against package version
+        if: github.event_name == 'push'
+        shell: bash
+        run: |
+          TAG_NAME="${GITHUB_REF_NAME}"
+          if [[ ! "$TAG_NAME" =~ ^v[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$ ]]; then
+            echo "Release tag must match vX.Y.Z or prerelease format vX.Y.Z-suffix. Got: $TAG_NAME"
+            exit 1
+          fi
+
+          PACKAGE_VERSION=$(node -p "require('./package.json').version")
+          EXPECTED_TAG="v$PACKAGE_VERSION"
+
+          if [[ "$TAG_NAME" != "$EXPECTED_TAG" ]]; then
+            echo "Release tag $TAG_NAME does not match package.json version $PACKAGE_VERSION"
+            exit 1
+          fi
+
       - name: Lint
         run: npm run lint
 
@@ -37,6 +55,7 @@ jobs:
         run: npm run build
 
       - name: Publish to npm
+        if: github.event_name == 'push'
         run: npm publish --access public --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.token_npm }}
