@@ -4,17 +4,19 @@
 import s from './Tab.module.scss';
 import * as Tabs from '@radix-ui/react-tabs';
 
-export type Props = {
-  items: {
-    label: string;
-    value: string;
-    children: React.ReactNode;
-    disabled?: boolean;
-  }[];
+export type TabItem = {
+  label: string;
+  value: string;
+  children: React.ReactNode;
+  disabled?: boolean;
+};
+
+export type TabProps = {
+  items: TabItem[];
   defaultTab?: string;
 };
 
-export const Tab = ({ items, defaultTab }: Props) => {
+export const Tab = ({ items, defaultTab }: TabProps) => {
   const defaultValue = defaultTab || items[0]?.value;
 
   return (

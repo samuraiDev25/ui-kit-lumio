@@ -12,9 +12,10 @@ import { DatePickerRangeMode } from './datePickerMode/DatePickerRangeMode';
 import { DatePickerMultipleMode } from './datePickerMode/DatePickerMultipleMode';
 import { CaptionLayout } from './types';
 
-type Mode = 'multiple' | 'range';
-type DatePickerProps = {
-  mode: Mode;
+export type DatePickerMode = 'multiple' | 'range';
+
+export type DatePickerProps = {
+  mode: DatePickerMode;
   disabled?: boolean;
   allowPastDates?: boolean;
   className?: string;
@@ -36,6 +37,7 @@ type DatePickerProps = {
   errorMessage?: string | null;
   errorNode?: React.ReactNode;
 };
+
 export const DatePicker = ({
   mode,
   disabled = false,

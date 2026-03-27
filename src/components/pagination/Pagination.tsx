@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { ArrowIosBack, ArrowIosForward } from '@/shared/ui/icons';
 import { PageSizeSelector } from '@/shared/ui/pagination/pageSizeSelector/PageSizeSelector';
 
-type PaginationProps = {
+export type PaginationProps = {
   totalPages: number;
   initialPage?: number;
   initialPageSize?: number;

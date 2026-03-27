@@ -12,9 +12,23 @@ const dirname = typeof __dirname !== 'undefined' ? __dirname : path.dirname(file
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
   plugins: [react()],
+  publicDir: false,
   resolve: {
     alias: {
       '@': path.join(dirname, 'src'),
+    },
+  },
+  build: {
+    emptyOutDir: true,
+    lib: {
+      entry: path.join(dirname, 'src', 'lib.ts'),
+      fileName: (format) => (format === 'es' ? 'index.js' : 'index.cjs'),
+      formats: ['es', 'cjs'],
+      name: 'LumioUiKit',
+      cssFileName: 'styles',
+    },
+    rollupOptions: {
+      external: ['react', 'react-dom', 'react/jsx-runtime', 'react/jsx-dev-runtime'],
     },
   },
   test: {
