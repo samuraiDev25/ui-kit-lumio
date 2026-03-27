@@ -1,0 +1,65 @@
+.app-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 40px 0 64px;
+}
+
+.app-demo__hero {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.app-demo__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.app-demo__card {
+  height: 100%;
+}
+
+.app-demo__card--full {
+  grid-column: 1 / -1;
+}
+
+.app-demo__stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.app-demo__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.app-demo__native-input {
+  width: 100%;
+  min-height: 36px;
+  margin-top: 8px;
+  padding: 8px 12px;
+}
+
+.app-demo__scroll-content {
+  display: grid;
+  gap: 12px;
+}
+
+.app-demo__loading-box {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+}
+
+@media (max-width: 768px) {
+  .app-demo {
+    gap: 24px;
+    padding-top: 24px;
+  }
+}

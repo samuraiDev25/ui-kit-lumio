@@ -30,14 +30,18 @@ export const DatePickerMultipleMode = ({
   endMonth,
   reverseYears,
 }: Props) => {
-  const validateDays = (day: Date) => {
-    if (!allowPastDates) {
-      onErrorAction('Error!!');
-      onSelectAction(day);
-    } else {
-      onErrorAction?.(null);
-      onSelectAction(day);
+  const normalizedToday = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+
+  const handleSelect = (day: Date) => {
+    const normalizedSelectedDay = new Date(day.getFullYear(), day.getMonth(), day.getDate());
+
+    if (!allowPastDates && normalizedSelectedDay > normalizedToday) {
+      onErrorAction('Future dates are not allowed');
+      return;
     }
+
+    onErrorAction(null);
+    onSelectAction(day);
   };
 
   const defaultClassNames: Partial<ClassNames> = {
@@ -74,7 +78,7 @@ export const DatePickerMultipleMode = ({
       selected={selectedDay}
       onSelect={(day) => {
         if (day) {
-          validateDays(day);
+          handleSelect(day);
         }
       }}
       numberOfMonths={1}

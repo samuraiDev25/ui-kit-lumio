@@ -30,6 +30,8 @@ export const DatePickerRangeMode = ({
   endMonth,
   reverseYears,
 }: Props) => {
+  const normalizedToday = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+
   const validateRange = (range?: DateRange) => {
     if (!range?.from) {
       onErrorAction?.(null);
@@ -41,8 +43,10 @@ export const DatePickerRangeMode = ({
       return true;
     }
 
-    if (!allowPastDates && range.to < today) {
-      onErrorAction?.('Error, select current month or last month');
+    const normalizedRangeEnd = new Date(range.to.getFullYear(), range.to.getMonth(), range.to.getDate());
+
+    if (!allowPastDates && normalizedRangeEnd > normalizedToday) {
+      onErrorAction?.('Future dates are not allowed');
       return false;
     }
 
